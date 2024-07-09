@@ -36,6 +36,7 @@ struct ListNode* deleteDuplicatesUnsorted(struct ListNode* head){
         {
             if (result->next != NULL)
             {
+		// This conditional allows us to escape the above if clause
                 if (count[result->next->val] > 1)
                 {
                     if (result->next->next != NULL)
