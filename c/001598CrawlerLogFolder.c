@@ -16,6 +16,8 @@ int minOperations(char** logs, int logsSize) {
 	// of one which is important for the else conditional below.
         if (strcmp(strtemp,"../") == 0)
         {
+	    // If the current directory is already at root, the
+	    // head variable can't go back anymore.
             if (head > 0)
             {
                 head--;
