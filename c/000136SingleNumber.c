@@ -49,4 +49,4 @@ int singleNumber(int* nums, int numsSize) {
 	return -1;
 }
 
-// This problem has two loop invariants
+// This particular solution has two loop invariants
