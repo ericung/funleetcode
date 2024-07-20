@@ -10,3 +10,5 @@ c problems are difficult in that they don't have standard libraries for abstract
 - standard and useful functions: malloc, sizeof, strlen, strcpy, strcmp
 
 - a proper string might have an ending character '\0'
+
+- sorting algorithm, qsort(array, size of array, size of character, compare function)
