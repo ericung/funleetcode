@@ -1,6 +1,4 @@
 // variables for operating on the stack
-// TODOLIST: turn into struct
-// TODOLIST: refactor
 struct Stack {
 	char* stack;
 	int SIZE;
