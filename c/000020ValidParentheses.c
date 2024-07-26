@@ -17,6 +17,7 @@ bool isValid(char* s) {
 	stack->pointer = -1;
 
 	// loop invariant is while i is between 0 and strlen(s) = n
+	// and s[k] is a valid opening or closing tag
 	for (int i = 0; i < strlen(s); i++)
 	{
 		// put s[k] in the stack
@@ -33,6 +34,7 @@ bool isValid(char* s) {
 		}
 		else
 		{
+            // if s[k] isn't a valid close, the loop invariant becomes false
 			return false;
 		}
 	}
