@@ -10,7 +10,11 @@ int finalValueAfterOperations(char** operations, int operationsSize) {
 }
 
 int findOperation(char* operation) {
-	// substring operation
+	// substring operation, 
+	// if the current operation contains a - symbol
+	// then return -1 because it is subtracting
+	// otherwise it is an addition operation by ruling out possibilities
+	// thus increase by 1
 	if (strstr(operation, "-")) {
 		return -1;
 	}
