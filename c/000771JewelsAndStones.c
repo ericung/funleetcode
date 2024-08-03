@@ -1,6 +1,6 @@
 int numJewelsInStones(char* jewels, char* stones) {
-	int lowerStones[26] = {0};
-	int upperStones[26] = {0};
+	int lowerStones[26] = {0}; // lower digit stones
+	int upperStones[26] = {0}; // upper digit stones
 	int result = 0;
 
 	for (int i = 0; i < strlen(jewels); i++) {
