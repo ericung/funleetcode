@@ -12,6 +12,8 @@ int rangeSum(int* nums, int numsSize, int n, int left, int right) {
 	// for every j between i + 1 and n-1,
 	// p such that p is between i to i + n-1-i
 	// subarray[p] = subarray[p-1] + nums[j]
+	// by analyzing the p in this manner,
+	// a solution that runs in nlgn can be made out
 	for (int i = 0; i < numsSize; i++) {
 		subarraySum[p++] = nums[i];
 		for (int j = i + 1; j < numsSize; j++) {
