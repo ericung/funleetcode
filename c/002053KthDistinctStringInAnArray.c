@@ -4,9 +4,11 @@ int convertToInt(char* s);
 
 char* kthDistinct(char** arr, int arrSize, int k) {
 	int *hashmap = malloc(sizeof(int*)*SIZE);
+	int *arrHash = malloc(sizeof(int*)*arrSize);
 	int ik = 0;
 
 	memset(hashmap, 0, sizeof(int*)*SIZE);
+	memset(arrHash, 0, sizeof(int*)*arrSize);
 
 	for (int i = 0; i < arrSize; i++) {
 		int key = convertToInt(arr[i]);
@@ -18,7 +20,7 @@ char* kthDistinct(char** arr, int arrSize, int k) {
 	// while the condition that ik (the variable of
 	// the ith unique element in arr) < k holds
 	for (int i = 0 ; i < arrSize; i++) {
-		int key = convertToInt(arr[i]);
+		int key = arrHash[i]; // reduce call to convertToInt
 
 		if (hashmap[key] == 1) {
 			ik++;
