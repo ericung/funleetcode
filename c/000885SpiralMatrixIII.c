@@ -1,4 +1,4 @@
-int direction[4][2] = {{0,-1},{-1,0},{0,1},{1,0}};
+const int direction[4][2] = {{0,-1},{-1,0},{0,1},{1,0}};
 
 int** spiralMatrixIII(int rows, int cols, int rStart, int cStart, int* returnSize, int** returnColumnSizes) {
 	int **result = malloc(sizeof(int*)*rows*cols);
@@ -16,23 +16,24 @@ int** spiralMatrixIII(int rows, int cols, int rStart, int cStart, int* returnSiz
 	*returnColumnSizes = malloc(sizeof(int*) * (cols * rows));
 	**returnColumnSizes = 2;
 
+	// for every two times the loop goes through, increase scale(magnitude, etc)
+	// so that the scale*direction fits a perfect spiral forming a matrix
 	while (count < rows * cols) {
-		int newR = r + direction[d][0];
-		int newC = c + direction[d][1];
+		r = r + direction[d][0];
+		c = c + direction[d][1];
 
-		if ((0 <= newR)&&(newR < rows)&&(0 <= newC)&&(newC < cols)) {
+		// 
+		if ((0 <= r)&&(r < rows)&&(0 <= c)&&(c < cols)) {
 			result[count] = malloc(sizeof(int*)*2);
-			result[count][0] = newR;
-			result[count++][1] = newC;
-
-			(*returnColumnSizes)[count-1] = 2;
+			result[count][0] = r;
+			result[count][1] = c;
+			(*returnColumnSizes)[count++] = 2;
 			*returnSize = count;
 		}
-		
-		r = newR;
-		c = newC;
+
 		cs++;
 
+		// automaton
 		if (cs >= scale) {
 			cs = 0;
 			d++;
