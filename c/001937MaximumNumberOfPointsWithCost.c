@@ -5,6 +5,10 @@ long long maxPoints(int** points, int pointsSize, int* pointsColSize) {
 
     for(int j = 0; j < *pointsColSize; j++) {
         dp[0][j] = (long long)points[0][j];
+
+        if (dp[0][j] > max) {
+            max = dp[0][j];
+        }
     }
 
     for (int i = 1; i < pointsSize; i++) {
@@ -19,12 +23,10 @@ long long maxPoints(int** points, int pointsSize, int* pointsColSize) {
             value = value - 1 < dp[i-1][j] ? dp[i-1][j] : value - 1;
             dp[i][j] = value < dp[i][j] ? dp[i][j] : value;
             dp[i][j] += points[i][j];
-        }
-    }
 
-    for (int j = 0; j < *pointsColSize; j++) {
-        if (dp[pointsSize - 1][j] > max) {
-            max = dp[pointsSize - 1][j];
+            if (dp[i][j] > max) {
+                max = dp[i][j];
+            }
         }
     }
 
