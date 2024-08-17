@@ -3,10 +3,8 @@ long long maxPoints(int** points, int pointsSize, int* pointsColSize) {
     long long max = 0;
     long long value = 0;
 
-    for (int i = 0; i < pointsSize; i++) {
-        for(int j = 0; j < *pointsColSize; j++) {
-            dp[i][j] = (long long)points[i][j];
-        }
+    for(int j = 0; j < *pointsColSize; j++) {
+        dp[0][j] = (long long)points[0][j];
     }
 
     for (int i = 1; i < pointsSize; i++) {
