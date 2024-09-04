@@ -9,7 +9,7 @@ c problems are difficult in that they don't have standard libraries for abstract
 
 - standard and useful functions: malloc, sizeof
 
-- string functions: strlen, strcpy, strcmp, strncpy, isspace, isalnum, tolower
+- string functions: strlen, strcpy, strcmp, strncpy, isspace, isalnum, tolower, strtoll
 
 - a proper string might have an ending character '\0'
 
