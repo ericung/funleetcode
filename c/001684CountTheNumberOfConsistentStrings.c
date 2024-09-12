@@ -32,7 +32,7 @@ int countConsistentStrings(char * allowed, char ** words, int wordsSize){
 // lambda - [1 0 0 0 ...]
 // mu [ 1 0 0
 //	0 1 0 
-// 	0 0 1 ]
+// 	0 0 1 ] is a 27x27 matrix that morphs 
 // w ababba
 // gamma 
 // 	[	1
