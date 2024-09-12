@@ -25,4 +25,18 @@ int countConsistentStrings(char * allowed, char ** words, int wordsSize){
 	return count;
 }
 
-// (S,w) = lambda * mu * w * gamma = lambda * mu * hash is an element of a A^27x27 * gamma
+// (S,w) = lambda * mu * w * gamma = lambda * mu is an element of a A^27x27 * w * gamma
+// linear representations of morphisms, 
+//
+// what is 
+// lambda - [1 0 0 0 ...]
+// mu [ 1 0 0
+//	0 1 0 
+// 	0 0 1 ]
+// w ababba
+// gamma 
+// 	[	1
+// 		0
+// 		0
+// 		... ]
+// mu = {x - 'a'}
