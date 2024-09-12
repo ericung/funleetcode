@@ -29,12 +29,12 @@ int countConsistentStrings(char * allowed, char ** words, int wordsSize){
 // linear representations of morphisms, 
 //
 // what is 
-// lambda - [1 0 0 0 ...]
+// lambda - [1 0 0 0 ...] index j
 // mu [ 1 0 0
 //	0 1 0 
-// 	0 0 1 ] is a 27x27 matrix that morphs 
-// w ababba
-// gamma 
+// 	0 0 1 ] is a 27x27 matrix that morphs the allowed word count to the hash
+// w ababba is the elements in the words matrix being tested
+// gamma index j
 // 	[	1
 // 		0
 // 		0
