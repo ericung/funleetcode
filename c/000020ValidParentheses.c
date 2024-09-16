@@ -1,3 +1,8 @@
+#include "stdlib.h" 
+#include "stdio.h"
+#include "string.h"
+#include "stdbool.h"
+
 // variables for operating on the stack
 struct Stack {
 	char* stack;
@@ -63,4 +68,24 @@ char top(struct Stack *stack) {
 	}
 
 	return '\0';
+}
+
+int main() {
+	char* input1 = "()";
+	bool result1 = isValid(input1);
+	printf("%d\n", result1);
+
+	char* input2 = "()[]{}";
+	bool result2 = isValid(input2);
+	printf("%d\n", result2);
+
+	char* input3 = "(]";
+	bool result3 = isValid(input3);
+	printf("%d\n", result3);
+
+	char* input4 = "([])";
+	bool result4 = isValid(input4);
+	printf("%d\n", result4);
+
+	return 0;	
 }
