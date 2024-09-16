@@ -1,4 +1,7 @@
-all: longestcommonprefix twosum validparentheses removeelement
+all: longestcommonprefix twosum validparentheses removeelement findindexfirstoccurence
+
+findindexfirstoccurence: 000028FindTheIndexOfTheFirstOccurenceInAString.o
+	cc -o bin/findindexfirstoccurence 000028FindTheIndexOfTheFirstOccurenceInAString.c
 
 removeelement: 000027RemoveElement.o
 	cc -o bin/removeelement 000027RemoveElement.o
@@ -24,8 +27,12 @@ twosum:	000001TwoSum.o
 000027RemoveElement.o: 000027RemoveElement.c
 	cc -c 000027RemoveElement.c
 
+000028FindTheIndexOfTheFirstOccurenceInAString.o: 000028FindTheIndexOfTheFirstOccurenceInAString.c
+	cc -c 000028FindTheIndexOfTheFirstOccurenceInAString.c
+
 clean:
 	rm bin/twosum 000001TwoSum.o \
 		bin/longestcommonprefix 000014LongestCommonPrefix.o \
 		bin/validparentheses 000020ValidParentheses.o \
-		bin/removeelement 000027RemoveElement.o
+		bin/removeelement 000027RemoveElement.o	\
+		bin/findindexfirstoccurence 000028FindTheIndexOfTheFirstOccurenceInAString.o
