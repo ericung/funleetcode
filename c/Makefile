@@ -1,4 +1,7 @@
-all: longestcommonprefix twosum validparentheses removeelement findindexfirstoccurence
+all: longestcommonprefix twosum validparentheses removeelement findindexfirstoccurence climbingstairs
+
+climbingstairs: 000070ClimbingStairs.o
+	cc -o bin/climbingstairs 000070ClimbingStairs.c
 
 findindexfirstoccurence: 000028FindTheIndexOfTheFirstOccurenceInAString.o
 	cc -o bin/findindexfirstoccurence 000028FindTheIndexOfTheFirstOccurenceInAString.c
@@ -30,9 +33,13 @@ twosum:	000001TwoSum.o
 000028FindTheIndexOfTheFirstOccurenceInAString.o: 000028FindTheIndexOfTheFirstOccurenceInAString.c
 	cc -c 000028FindTheIndexOfTheFirstOccurenceInAString.c
 
+000070ClimbingStairs.o: 000070ClimbingStairs.c
+	cc -c 000070ClimbingStairs.c
+
 clean:
 	rm bin/twosum 000001TwoSum.o \
 		bin/longestcommonprefix 000014LongestCommonPrefix.o \
 		bin/validparentheses 000020ValidParentheses.o \
 		bin/removeelement 000027RemoveElement.o	\
-		bin/findindexfirstoccurence 000028FindTheIndexOfTheFirstOccurenceInAString.o
+		bin/findindexfirstoccurence 000028FindTheIndexOfTheFirstOccurenceInAString.o \
+		bin/climbingstairs 000070ClimbingStairs.o
