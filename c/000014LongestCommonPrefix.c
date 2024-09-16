@@ -1,3 +1,7 @@
+#include "stdio.h"
+#include "stdlib.h"
+#include "string.h"
+
 char* longestCommonPrefix(char** strs, int strsSize) {
 	// initialization of 300, minIndex, minLength, and prefix
 	int max = 300;
@@ -37,4 +41,12 @@ char* longestCommonPrefix(char** strs, int strsSize) {
 	prefix[max] = '\0';
 
 	return prefix;
+}
+
+int main() {
+	char* strs[3] = {"flower","flow","flight"};
+	char* result = longestCommonPrefix(strs, 3);
+	printf("%s\n", result);
+
+	return 0;
 }
