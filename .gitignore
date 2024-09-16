@@ -302,3 +302,5 @@ TSWLatexianTemp*
 
 *~
 *.out
+*.o
+*.exe
