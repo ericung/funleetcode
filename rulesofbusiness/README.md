@@ -12,7 +12,7 @@ takes a few moments to complete. Respect the janitor.
 
 4.	When you win once, everyone will get off your case - for a while.
 
-5.	Immigrants are establishing roots and sort themselves out. Be open to
+5.	Immigrants are establishing roots and sorting themselves out. Be open to
 people outside your usual circle of friends and family. Be nice to the new
 guy. 
 
