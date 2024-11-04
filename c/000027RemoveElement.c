@@ -1,3 +1,6 @@
+#include "stdio.h"
+#include "stdlib.h"
+
 int removeElement(int* nums, int numsSize, int val) {
 	// place variable
 	int place = 0;
@@ -25,3 +28,12 @@ int removeElement(int* nums, int numsSize, int val) {
  * while k is in between 0 and numsSize - 1
  * While the invariant is true, update nums[place] = nums[k]
  */
+
+int main() {
+	int nums[4] = {3,2,2,3};
+	int result = removeElement(nums, 4, 3);
+	printf("%d\n", result);
+
+	return 0;
+}
+

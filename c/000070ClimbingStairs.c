@@ -1,3 +1,7 @@
+#include "stdio.h"
+#include "stdlib.h"
+#include "string.h"
+
 int climbStairs(int n) {
 	// trivial cases
 	if (n < 3)
@@ -30,3 +34,10 @@ int climbStairs(int n) {
  * 	or t_{n} = t_{n-1} + t_{n-2}
  *
  */
+
+int main() {
+	int result = climbStairs(5);
+	printf("%d\n", result);
+
+	return 0;
+}
