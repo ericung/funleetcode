@@ -227,3 +227,7 @@ You can test the API endpoints using tools like Postman:
 - `POST /api/auth/login` with a JSON body containing `Username` and `Password` to log in and receive a JWT token.
 
 This template provides a basic setup for authentication and authorization in an ASP.NET Core Web API project using `Program.cs`. You can extend it further by adding role-based authorization, user profile management, and other features as needed.
+
+
+# Analysis of Project Templating Using Copilot
+Using AI to generate code, we see that there are a lot of mistakes in following the steps logically. There are little caveats that the reader can't follow simply after the first few lines. A lot of little mistakes make a program uncompilable hence, it can be warned of the weariness of what AI can generate if someone were to take AI as a template.
