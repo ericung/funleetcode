@@ -1,6 +1,4 @@
-### AI Generated Templates
-
-Certainly! Below is a basic template for a .NET solution that includes authentication and authorization using ASP.NET Core with Identity. This example demonstrates setting up a new ASP.NET Core Web API project with authentication and authorization.
+Certainly! In ASP.NET Core projects, starting from .NET 6, the `Startup.cs` file configuration has been merged into `Program.cs`. Below is an updated version of the previous example, where all configurations are done in `Program.cs`.
 
 ### Step 1: Create a New ASP.NET Core Web API Project
 You can create a new ASP.NET Core Web API project using the .NET CLI:
@@ -19,76 +17,64 @@ dotnet add package Microsoft.EntityFrameworkCore.SqlServer
 dotnet add package Microsoft.AspNetCore.Authentication.JwtBearer
 ```
 
-### Step 3: Configure Identity and Authentication in `Startup.cs`
-In your `Startup.cs` file, configure the services and middleware for Identity and JWT authentication.
+### Step 3: Configure Identity and Authentication in `Program.cs`
+In your `Program.cs` file, configure the services and middleware for Identity and JWT authentication.
 
 ```csharp
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
-public class Startup
+var builder = WebApplication.CreateBuilder(args);
+
+// Add services to the container.
+
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+    .AddEntityFrameworkStores<ApplicationDbContext>()
+    .AddDefaultTokenProviders();
+
+builder.Services.AddAuthentication(options =>
 {
-    public IConfiguration Configuration { get; }
-
-    public Startup(IConfiguration configuration)
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+}).AddJwtBearer(options =>
+{
+    options.TokenValidationParameters = new TokenValidationParameters
     {
-        Configuration = configuration;
-    }
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey = true,
+        ValidIssuer = builder.Configuration["Jwt:Issuer"],
+        ValidAudience = builder.Configuration["Jwt:Issuer"],
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
+    };
+});
 
-    public void ConfigureServices(IServiceCollection services)
-    {
-        services.AddDbContext<ApplicationDbContext>(options =>
-            options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddControllers();
 
-        services.AddIdentity<IdentityUser, IdentityRole>()
-            .AddEntityFrameworkStores<ApplicationDbContext>()
-            .AddDefaultTokenProviders();
+var app = builder.Build();
 
-        services.AddAuthentication(options =>
-        {
-            options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-            options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-        }).AddJwtBearer(options =>
-        {
-            options.TokenValidationParameters = new TokenValidationParameters
-            {
-                ValidateIssuer = true,
-                ValidateAudience = true,
-                ValidateLifetime = true,
-                ValidateIssuerSigningKey = true,
-                ValidIssuer = Configuration["Jwt:Issuer"],
-                ValidAudience = Configuration["Jwt:Issuer"],
-                IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))
-            };
-        });
+// Configure the HTTP request pipeline.
 
-        services.AddControllers();
-    }
-
-    public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-    {
-        if (env.IsDevelopment())
-        {
-            app.UseDeveloperExceptionPage();
-        }
-
-        app.UseHttpsRedirection();
-        app.UseRouting();
-
-        app.UseAuthentication();
-        app.UseAuthorization();
-
-        app.UseEndpoints(endpoints =>
-        {
-            endpoints.MapControllers();
-        });
-    }
+if (app.Environment.IsDevelopment())
+{
+    app.UseDeveloperExceptionPage();
 }
+
+app.UseHttpsRedirection();
+
+app.UseAuthentication();
+app.UseAuthorization();
+
+app.MapControllers();
+
+app.Run();
 ```
 
 ### Step 4: Set Up the Database Context
@@ -240,4 +226,4 @@ You can test the API endpoints using tools like Postman:
 - `POST /api/auth/register` with a JSON body containing `Username`, `Email`, and `Password` to register a new user.
 - `POST /api/auth/login` with a JSON body containing `Username` and `Password` to log in and receive a JWT token.
 
-This template provides a basic setup for authentication and authorization in an ASP.NET Core Web API project. You can extend it further by adding role-based authorization, user profile management, and other features as needed.
+This template provides a basic setup for authentication and authorization in an ASP.NET Core Web API project using `Program.cs`. You can extend it further by adding role-based authorization, user profile management, and other features as needed.
