@@ -6,3 +6,4 @@ Section 13.46 of the Minnesota Statutes pertains to **Welfare Data**. Here are s
 
 Would you like more details on any specific part of this statute?
 
+https://www.revisor.mn.gov/statutes/cite/13.46
