@@ -1,0 +1,11 @@
+{
+  "id": "/subscriptions/1ec0ebb3-b6fe-4388-9f92-6d3d0785bbc3/resourceGroups/wallarmtestinggroup01272025",
+  "location": "eastus",
+  "managedBy": null,
+  "name": "wallarmtestinggroup01272025",
+  "properties": {
+    "provisioningState": "Succeeded"
+  },
+  "tags": null,
+  "type": "Microsoft.Resources/resourceGroups"
+}

@@ -1,0 +1,2 @@
+name - wallarmtestingnode01272025
+resource group name - wallarmtesting01272025
