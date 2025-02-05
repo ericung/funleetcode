@@ -99,3 +99,17 @@ A "verdict against the weight of evidence" refers to a situation where the decis
 - Suppose in a civil trial, the plaintiff presents strong, convincing evidence supporting their claim, and the defendant's evidence is weak and unconvincing. If the jury rules in favor of the defendant, the plaintiff might argue that the verdict is against the weight of the evidence and request a new trial.
 
 In essence, this legal principle ensures that verdicts are fair and based on the overall evidence presented during a trial. If a verdict is found to be contrary to the weight of evidence, it may be subject to review and potential reversal.
+
+A "verdict against the weight of evidence" occurs when a jury's or judge's decision seems inconsistent with the overall evidence presented during the trial. In other words, the verdict doesn't align with what the evidence overwhelmingly supports.
+
+### Legal Implications
+If a party believes that a verdict is against the weight of the evidence, they can:
+- **File a Motion for a New Trial**: The court will review the motion to determine whether the verdict was reasonable based on the evidence presented. The court may grant a new trial if it finds that the verdict was indeed against the weight of the evidence.
+- **File an Appeal**: An appellate court can review the trial court's decision and may overturn the verdict if it finds that the decision was not supported by the evidence.
+
+### Example
+Suppose in a civil trial, the plaintiff presents strong, convincing evidence supporting their claim, and the defendant's evidence is weak and unconvincing. If the jury rules in favor of the defendant, the plaintiff might argue that the verdict is against the weight of the evidence and request a new trial.
+
+This principle ensures that verdicts are fair and based on the overall evidence presented during a trial. If a verdict is found to be contrary to the weight of evidence, it may be subject to review and potential reversal.
+
+Feel free to ask more questions if you have any!
