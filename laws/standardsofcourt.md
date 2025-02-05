@@ -1,4 +1,7 @@
+
+
 # standards of a court to determine how to rule on the motion
+
 
 Courts typically use several standards to determine how to rule on motions. These standards can vary based on the type of motion, jurisdiction, and specific case details. Here are some common standards:
 
