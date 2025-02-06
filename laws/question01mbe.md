@@ -351,3 +351,6 @@ Here are some of the specific purposes of judgment as a matter of law:
 
 Judgment as a matter of law is a complex legal procedure that should be used carefully. If you are considering filing a motion for judgment as a matter of law, it is important to speak with an experienced attorney to discuss your options.
 
+
+
+
