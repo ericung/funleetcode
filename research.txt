@@ -1,0 +1,7 @@
+https://github.com/troydhanson/uthash - 002053KthDistinctStringInAnArray
+ackermann function - 000959regionscutbyslashes
+
+Derivatives of regular Expressions
+
+Extension of Brzozowski's derivation calculus of rational expressions to
+series over the free partially commutative monoids
